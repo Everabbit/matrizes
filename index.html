@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações com Matrizes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+            <h1>Operações com Matrizes</h1>
+            <div id="operacoes-div">
+                <h2>Escolha uma operação</h2>
+                <form id="form-operacoes">
+                    <label for="operacao">Operação:</label>
+                    <select id="operacao" name="operacao">
+                        <option value="adicao">Adição</option>
+                        <option value="subtracao">Subtração</option>
+                        <option value="multiplicacao">Multiplicação</option>
+                        <option value="transposta">Transposta</option>
+                        <option value="identidade">Identidade</option>
+                        <option value="inversa">Inversa</option>
+                    </select>
+                    <button type="button" id="configurar-matriz">Configurar Matrizes</button>
+                </form>
+            </div>
+            <div id="configuracao-matriz-div" class="hidden">
+                <h2>Configurar Matrizes</h2>
+                <form id="form-configuracao-matriz">
+                    <h3>Primeira Matriz</h3>
+                    <label for="linhas">Linhas:</label>
+                    <input type="number" id="linhas" min="1" required>
+                    <label for="colunas">Colunas:</label>
+                    <input type="number" id="colunas" min="1" required>
+                    <button type="submit">Gerar Matriz 1</button>
+                    <p><b>Preencher Matriz de forma Triangular? (Valores aleatórios)</b></p> 
+                    Superior: <input type="checkbox" id="tri_1S" value="S"> <br/>
+                    Inferior: <input type="checkbox" id="tri_1I" value="I"> <br/> 
+                </form>
+                <div id="matriz2-config" class="hidden">
+                    <h3>Segunda Matriz</h3>
+                    <form id="form-configuracao-matriz2">
+                        <label for="linhas2">Linhas:</label>
+                        <input type="number" id="linhas2" min="1">
+                        <label for="colunas2">Colunas:</label>
+                        <input type="number" id="colunas2" min="1">
+                        <button type="submit">Gerar Matriz 2</button>
+                        <p><b>Preencher Matriz de forma Triangular? (Valores aleatórios)</b></p> 
+                        Superior: <input type="checkbox" id="tri_2S" value="S"> <br/>
+                        Inferior: <input type="checkbox" id="tri_2I" value="I"> <br/> 
+                    </form>
+                </div>
+                <button id="executar-operacao" class="hidden">Executar Operação</button>
+            </div>
+        </div>
+        <div class="matrizes">
+            <div id="matriz1-div" class="hidden"></div>
+            <div id="matriz2-div" class="hidden"></div>
+            <div id="resultado-operacao"></div>
+        </div>
+    </div>
+</body>
+</html>
